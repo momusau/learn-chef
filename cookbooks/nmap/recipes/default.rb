@@ -10,8 +10,4 @@ apt_update 'Update the apt cache daily' do
 end
 
 
-      execute "install-nmap-version-6-x86_64" do
-        command "rpm -Uvh http://nmap.org/dist/nmap-6.00-1.x86_64.rpm"
-        action :run
-        not_if "nmap --version |grep 6.00"
-      end
+package 'nmap'
